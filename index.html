@@ -6,5 +6,55 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Simple Calculator using html form</title>
     </head>
-    <body></body>
+    <body>
+        <form style="display: inline-block">
+            <input type="text" name="number1" size="5" />
+            <select name="operator" id="">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <input type="text" name="number2" size="5" />
+            <input type="button" value="=" onclick="s('OK')" />
+        </form>
+        <span id="result" style="display: inline-block"></span>
+        <script>
+            let n1 = document.querySelector("input[name='number1']"); //object.method()
+            let n2 = document.querySelector("input[name='number2']"); //object.method()
+
+            let rslt = document.getElementById("result");
+            let op = document.querySelector('select[name="operator"]');
+            function s() {
+                var a = parseFloat(n1.value);
+                var b = parseFloat(n2.value);
+                console.log(op.value);
+                switch (op.value) {
+                    case "+":
+                        console.log(a + b);
+                        rslt.innerHTML = a + b;
+                        break;
+                    case "-":
+                        console.log(a - b);
+                        rslt.innerHTML = a - b;
+                        break;
+                    case "*":
+                        console.log(a * b);
+                        rslt.innerHTML = a * b;
+                        break;
+                    case "/":
+                        console.log(a / b);
+                        rslt.innerHTML = a / b;
+                        break;
+                    case "%":
+                        console.log(a % b);
+                        rslt.innerHTML = a % b;
+                        break;
+                    default:
+                        console.log("Invalid operator");
+                }
+            }
+        </script>
+    </body>
 </html>
